@@ -1,9 +1,7 @@
-// Canvas and game variables
 var canvas, ctx;
 var canvasWidth = 360;
 var canvasHeight = 640;
 
-// Game images
 var bgImage = new Image();
 var birdImage = new Image();
 var topPipeImage = new Image();
@@ -12,7 +10,6 @@ var playBtnImage = new Image();
 var logoImage = new Image();
 var gameOverImage = new Image();
 
-// Load all images
 bgImage.src = "./flappybirdbg.png";
 birdImage.src = "./flappybird.png";
 topPipeImage.src = "./toppipe.png";
@@ -21,7 +18,6 @@ playBtnImage.src = "./flappyBirdPlayButton.png";
 logoImage.src = "./flappyBirdLogo.png";
 gameOverImage.src = "./flappy-gameover.png";
 
-// Game states
 var gameStates = {
     menu: "menu",
     playing: "playing",
@@ -29,7 +25,6 @@ var gameStates = {
 };
 var gameState = gameStates.menu;
 
-// Bird properties
 var birdX = 50;
 var birdY = canvasHeight / 2;
 var birdWidth = 40;
@@ -37,20 +32,17 @@ var birdHeight = 30;
 var birdVelocityY = 0;
 var birdStartY = canvasHeight / 2;
 
-// Pipe properties
 var pipes = [];
 var pipeSpeed = -2;
 var pipeWidth = 50;
 var pipeGap = 200;
 var pipeTimer;
 
-// Game mechanics
 var gravityForce = 0.5;
 var jumpStrength = -6;
 var gameScore = 0;
 var inputBlocked = false;
 
-// UI elements
 var playButtonX = canvasWidth / 2 - 115.5 / 2;
 var playButtonY = canvasHeight / 2 - 64 / 2;
 var playButtonWidth = 115;
@@ -61,7 +53,6 @@ var logoY = canvasHeight / 4;
 var logoWidth = 300;
 var logoHeight = 100;
 
-// Initialize game when page loads
 window.onload = function() {
     setupCanvas();
     setupControls();
